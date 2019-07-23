@@ -1,0 +1,88 @@
+body{
+	font-family: 'Lato', sans-serif;
+	background-color:$gray;
+}
+
+.base{
+	width:80vw;
+	height:100vh;
+	margin-left:10vw;
+	margin-right:10vw;
+	position: relative;
+}
+
+li.cell, .card{
+	width:8vw;
+	height:8vw * (1 / $card-ratio);	
+	border-radius: 5px;
+}
+
+.top-container{
+	width:100%;
+	padding-top: 50px;
+	ul{
+		@include flexbox(row, center, space-between);
+		li{
+			width:8vw;
+			height:8vw * (1 / $card-ratio);
+			&.cell{
+				border:2px solid $light-gray;
+				opacity:0.6;
+			}
+			&.home-cell{
+				border:2px solid $light-gray;
+				background-color: $light-gray;
+			}
+			&.logo{
+				background-image: url('../img/king_happy.png');
+				background-repeat:no-repeat;
+				background-size: 60%;
+				background-position: center 25%;
+				text-align: center;
+				p{
+					text-transform: uppercase;
+					margin-top:90%;
+				}
+			}
+		}
+	}
+}
+
+main{
+	width:100%;
+	margin-top: 10px;
+	ul{
+		@include flexbox(row, center, space-between);
+		position: relative;
+	}
+	.card{
+		display:block;
+		background-repeat: no-repeat;
+		background-size:cover;
+		position: absolute;
+		transition:0.5s linear .5s;
+		transform: translateY(0);
+		 &.show{		
+			transform: translateY(8vw * (1 / $card-ratio)*0.17);
+		 }
+	}
+}
+
+nav{
+	position: absolute;
+	bottom: 0;
+	left:0;
+	height:80px;
+	width: 100%;
+	border-top:1px solid #CCCCCC;
+	@include flexbox(row, center, space-between);
+	.left-panel{
+		@include flexbox(row, center, space-between);
+		p{
+			margin-left:20px;
+		}
+	}
+	.right-panel ul{
+		@include flexbox(row, center, flex-end);
+	}
+}
