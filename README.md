@@ -3,7 +3,7 @@ Challenge: https://challenge.thef2e.com/news/13
 
 UI design by Daphne: https://challenge.thef2e.com/user/2104?schedule=2826#works-2826
 
-Link:
+Link: https://quebec87.github.io/freecell/
 
 # Finished:
 
