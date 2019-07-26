@@ -10,45 +10,67 @@
 <div class="base">
   <div class="top-container">
     <ul>
-      <li class="cell temp-cell"></li>
-      <li class="cell temp-cell"></li>
-      <li class="cell temp-cell"></li>
-      <li class="cell temp-cell"></li>
+      <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
       <li class="logo"><p>Freecell</p></li>
-      <li class="cell home-cell"></li>
-      <li class="cell home-cell"></li>
-      <li class="cell home-cell"></li>
-      <li class="cell home-cell"></li>
+      <li class="cell home-cell S-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell H-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell D-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell C-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
     </ul>
   </div>
   <main>
     <ul class="working-area">
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
-      <li class="cell"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
     </ul>
   </main>
   <nav>
     <div class="left-panel">
       <div class="icon-info"></div>
-      <p class="time">TIME: 00:00</p>
+      <p class="time">TIME: <span>00:00</span></p>
       <p class="score">SCORE: 0</p>
     </div>
     <div class="right-panel">
       <ul>
         <li><a class="btn round-btn new-game-btn">new game</a></li>
         <li><a class="btn round-btn restart-btn">restart</a></li>
-        <li><a class="btn round-btn">hint</a></li>
+        <li><a class="btn round-btn hint-btn">hint</a></li>
         <li><a class="btn round-btn">undo</a></li>
       </ul>
   </div>
   </nav>
 </div>
+  <div class="mask hide">
+      <div class="info-window hide">
+          <a class="btn close-btn"></a>
+          <div class="pan win-pan">
+              <dic class="icon-king-joy"></dic>
+              <h2>Congratulations!</h2>
+              <p>You win the game!</p>
+              <ul>
+                <li><a class="btn round-btn restart-btn">play again</a></li>
+                <li><a class="btn round-btn new-game-btn">new game</a></li>
+              </ul>
+          </div>
+          <div class="pan confirm-pan">
+            <div class="icon-king-angry"></div>
+            <h2>Start a new game</h2>
+            <p>Are you sure you want to give up?</p>
+            <ul>
+                <li><a class="btn round-btn new-game-confirm-btn">new game</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

@@ -15,7 +15,12 @@ li.cell, .card{
 	width:8vw;
 	height:8vw * (1 / $card-ratio);	
 	border-radius: 5px;
+	&.drop-target-focus{
+		border:2px solid rgba($sec-color, 0.6);
+	}
 }
+
+
 
 .top-container{
 	width:100%;
@@ -26,19 +31,37 @@ li.cell, .card{
 			width:8vw;
 			height:8vw * (1 / $card-ratio);
 			&.cell{
-				border:2px solid $light-gray;
-				opacity:0.6;
+				display:block;
+				border:2px solid rgba($light-gray,0.6);
+				&.drop-target-focus{
+					border:2px solid rgba($sec-color, 0.6);
+				}
 			}
 			&.home-cell{
-				border:2px solid $light-gray;
+				border:none;
 				background-color: $light-gray;
+				background-repeat: no-repeat;
+				background-size: 3vw;
+				background-position: center center;
+			}
+			&.S-home{
+					background-image: url('../img/S.png');
+			}
+			&.H-home{
+				background-image: url('../img/H.png');
+			}
+			&.D-home{
+				background-image: url('../img/D.png');
+			}
+			&.C-home{
+				background-image: url('../img/C.png');
 			}
 			&.logo{
-				background-image: url('../img/king_happy.png');
-				background-repeat:no-repeat;
-				background-size: 60%;
-				background-position: center 25%;
-				text-align: center;
+          			background-image: url('../img/king_happy.png');
+			        background-repeat:no-repeat;
+			        background-size: 60%;
+			        background-position: center 25%;
+			        text-align: center;
 				p{
 					text-transform: uppercase;
 					margin-top:90%;
@@ -48,6 +71,14 @@ li.cell, .card{
 	}
 }
 
+.card{
+	display:block;
+	background-repeat: no-repeat;
+	background-size:cover;
+	cursor: pointer;
+}
+
+
 main{
 	width:100%;
 	margin-top: 10px;
@@ -56,14 +87,14 @@ main{
 		position: relative;
 	}
 	.card{
-		display:block;
-		background-repeat: no-repeat;
-		background-size:cover;
 		position: absolute;
 		transition:0.5s linear .5s;
 		transform: translateY(0);
 		 &.show{		
 			transform: translateY(8vw * (1 / $card-ratio)*0.17);
+		 }
+		 &.autohome{
+		 	border:2px solid rgba($sec-color, 0.6);
 		 }
 	}
 }
@@ -84,5 +115,77 @@ nav{
 	}
 	.right-panel ul{
 		@include flexbox(row, center, flex-end);
+	}
+}
+
+.mask{
+	width:100vw;
+	height:100vh;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:500;
+	background-color: rgba($primary-color,0);
+	transition:all 0.2s ease-out 0.4s;
+	display:block;
+	&.show{
+		
+		background-color: rgba($primary-color,0.7);
+	}
+	&.hide{
+		display:none;
+	}
+	.info-window{
+		width:50vw;
+		height:50vh;
+		position: absolute;
+		top:25vh;
+		left:25vw;
+		background-color:$light-gray;
+		border-radius: 10px;
+		transition: all 0.4s ease-out;
+		transform: scaleY(0);
+		display:block;
+		&.show{
+			
+			transform:scaleY(1);
+		}
+		&.hide{
+			display:none;
+		}
+		.close-btn{
+			  margin-right:3vh;
+			  margin-top:3vh;
+			  float:right;
+			  &:after{
+			  	clear:both;
+			  }
+		}
+		.pan{
+			width:50%;
+			height:80%;
+			margin-top:10%;
+			margin-left:25%;
+			text-align: center;
+			display:none;
+			&.show{
+				display:block;
+			}
+			h2{
+				padding-top:10px;
+				font-size:20px;
+				font-weight: bold;
+				line-height:30px;
+				color:$primary-color;
+				text-transform: uppercase;
+			}
+			p{
+				padding:10px;
+			}
+			ul{
+				margin-top:10vh;
+				@include flexbox(row, center, center);
+			}
+		}
 	}
 }
