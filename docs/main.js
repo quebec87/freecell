@@ -98,16 +98,11 @@ function dealTransition() {
 
 
 /////////////drag and drop
+//dragover
 function allowDrop(ev) {
     ev.preventDefault();
     ev.target.classList.add('drop-target-focus');
 }
-
-function dragStart(ev) {
-    //console.log('dragSTart');
-    //hint
-}
-
 
 function dragEnter(ev) {
     // $(ev.target).addClass('dragging');
@@ -118,7 +113,7 @@ function dragLeave(ev) {
     // $(ev.target).removeClass('dragging');
 }
 
-
+//drag start
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -409,9 +404,7 @@ function cardClicked(ev) {
 }
 
 function hintClicked(ev) {
-    //hack
-    // gameState = "win";
-    // showWinScreen();
+
 }
 
 function showConfirmWindow() {
@@ -441,7 +434,7 @@ function hideMask() {
 $('document').ready(function() {
     $('.new-game-btn').on('click', newGame);
     $('.restart-btn').on('click', restartGame);
-    $('.hint-btn').on('click', hintClicked);
+    //   $('.hint-btn').on('click', hintClicked);
     $('.close-btn').on('click', closeMask);
     $('.new-game-confirm-btn').on('click', confirmNewGame);
     newGame();

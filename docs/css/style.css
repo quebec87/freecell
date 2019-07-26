@@ -108,6 +108,15 @@ textarea:focus, input:focus, select:focus {
 	background-color: #FFB53E;
 }
 
+.disable {
+	cursor: default;
+	background-color: rgba(34, 34, 34, 0.7);
+}
+
+.disable:hover {
+	background-color: rgba(34, 34, 34, 0.7);
+}
+
 .icon-info {
 	background-image: url("../img/info.svg");
 	background-repeat: no-repeat;
@@ -198,7 +207,7 @@ li.cell.drop-target-focus, .card.drop-target-focus {
 
 .top-container {
 	width: 100%;
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 .top-container ul {
@@ -277,7 +286,7 @@ li.cell.drop-target-focus, .card.drop-target-focus {
 
 main {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 main ul {
@@ -312,6 +321,11 @@ main .card.show {
 
 main .card.autohome {
 	border: 2px solid rgba(255, 181, 62, 0.6);
+}
+
+main .cell > .card.show {
+	-webkit-transform: translateY(0);
+	        transform: translateY(0);
 }
 
 nav {

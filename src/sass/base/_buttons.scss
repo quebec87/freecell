@@ -28,6 +28,14 @@
   }
 }
 
+.disable{
+  cursor:default;
+  background-color: rgba($primary-color, 0.7);
+  &:hover{
+    background-color: rgba($primary-color, 0.7);
+  }
+}
+
 .icon-info{
   background-image: url('../img/info.svg');
   background-repeat: no-repeat;

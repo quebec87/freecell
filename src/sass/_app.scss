@@ -24,7 +24,7 @@ li.cell, .card{
 
 .top-container{
 	width:100%;
-	padding-top: 50px;
+	padding-top: 30px;
 	ul{
 		@include flexbox(row, center, space-between);
 		li{
@@ -81,7 +81,7 @@ li.cell, .card{
 
 main{
 	width:100%;
-	margin-top: 10px;
+	margin-top: 20px;
 	ul{
 		@include flexbox(row, center, space-between);
 		position: relative;
@@ -97,7 +97,12 @@ main{
 		 	border:2px solid rgba($sec-color, 0.6);
 		 }
 	}
+	.cell>.card.show{
+		transform: translateY(0);
+	}
 }
+
+
 
 nav{
 	position: absolute;
