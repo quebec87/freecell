@@ -296,7 +296,7 @@ function checkWin() {
 function autoEnd() {
     if (document.querySelectorAll('.working-area div').length > 0 || document.querySelectorAll('.temp-cell div').length > 0) {
         for (var i = 0; i < col; i++) {
-            var column = document.querySelectorAll('.working-area >li')[i]; //$('.working-area >li').eq(i);
+            var column = document.querySelectorAll('.working-area>li')[i]; //$('.working-area >li').eq(i);
             var cardsInColumn = column.querySelectorAll('div');
             var totalRow = cardsInColumn.length;
             if (totalRow != 0) {
@@ -394,7 +394,7 @@ function cardClicked(ev) {
     var cardPos = card.getAttribute('data-pos')
     var cardColumn = cardPos.substr(2, 1);
     var cardRow = cardPos.slice(4).slice(0, -1);
-    var column = document.querySelectorAll('.working-area >li')[cardColumn]; //$('.working-area > li').eq(cardColumn);
+    var column = document.querySelectorAll('.working-area>li')[cardColumn]; //$('.working-area > li').eq(cardColumn);
     if (column.querySelectorAll('div').length == parseInt(cardRow) + 1) {
         //last card
         checkAutoHome(card, 13);
