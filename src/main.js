@@ -47,7 +47,7 @@ function getDataCollection() {
         var col_order = i % col;
         arr[col_order].push(cardVal);
     }
-    console.log(arr);
+    //console.log(arr);
     return arr;
 }
 
@@ -238,7 +238,7 @@ function goHome(_home, _card, _row) {
 }
 
 function updateOrder(_c) {
-    var column = document.querySelectorAll('.working-area >li')[_c]; //$('.working-area >li').eq(_c);
+    var column = document.querySelectorAll('.working-area>li')[_c]; //$('.working-area >li').eq(_c);
     var totalRow = column.querySelectorAll('div').length;
     var card = column;
     for (var i = 0; i < totalRow; i++) {
@@ -251,7 +251,7 @@ function updateOrder(_c) {
 
 function updateDraggable() {
     for (let i = 0; i < col; i++) {
-        var column = document.querySelectorAll('.working-area >li')[i]; // $('.working-area >li').eq(i);
+        var column = document.querySelectorAll('.working-area>li')[i]; // $('.working-area >li').eq(i);
         var cardsInColumn = column.querySelectorAll('div');
         var totalRow = cardsInColumn.length;
         if (totalRow != 0) {
@@ -389,16 +389,23 @@ function confirmNewGame() {
 
 function cardClicked(ev) {
     ev.stopPropagation();
+    console.log('cardClicked');
     //check is last card or not
     var card = ev.target;
     var cardPos = card.getAttribute('data-pos')
-    var cardColumn = cardPos.substr(2, 1);
-    var cardRow = cardPos.slice(4).slice(0, -1);
-    var column = document.querySelectorAll('.working-area>li')[cardColumn]; //$('.working-area > li').eq(cardColumn);
-    if (column.querySelectorAll('div').length == parseInt(cardRow) + 1) {
-        //last card
+    if (cardPos != '') {
+        var cardColumn = cardPos.substr(2, 1);
+        var cardRow = cardPos.slice(4).slice(0, -1);
+        var column = document.querySelectorAll('.working-area>li')[cardColumn]; //$('.working-area > li').eq(cardColumn);
+        if (column.querySelectorAll('div').length == parseInt(cardRow) + 1) {
+            //last card
+            checkAutoHome(card, 13);
+        }
+    } else {
+        ///in temp cell
         checkAutoHome(card, 13);
     }
+
 }
 
 function hintClicked(ev) {
