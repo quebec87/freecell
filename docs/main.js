@@ -19,7 +19,7 @@ const historyMax = 5; //history max steps
 let score = 15000;
 const scoreBase = 15000;
 const homeCellPoint = 250;
-const secMinus = -1;
+const secMinus = -25;
 const undoMinus = -100;
 
 //////////buildata
