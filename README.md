@@ -19,11 +19,10 @@ click card can move to home cell
 
 timer
 
-
-# TODO:
-
 hint
 
 undo
+
+# TODO:
 
 score
