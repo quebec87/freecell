@@ -44,16 +44,16 @@ li.cell, .card{
 				background-size: 3vw;
 				background-position: center center;
 			}
-			&.S-home{
+			&#S-home{
 					background-image: url('../img/S.png');
 			}
-			&.H-home{
+			&#H-home{
 				background-image: url('../img/H.png');
 			}
-			&.D-home{
+			&#D-home{
 				background-image: url('../img/D.png');
 			}
-			&.C-home{
+			&#C-home{
 				background-image: url('../img/C.png');
 			}
 			&.logo{
@@ -76,6 +76,17 @@ li.cell, .card{
 	background-repeat: no-repeat;
 	background-size:cover;
 	cursor: pointer;
+}
+
+.hint{
+	border:1px solid $sec-color;
+	.card{
+		border-bottom:1px solid $sec-color;
+		border-right:1px solid $sec-color;
+	}
+	.hint-end{
+		border-left:1px solid $sec-color;
+	}
 }
 
 

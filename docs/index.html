@@ -15,22 +15,22 @@
       <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
       <li class="cell temp-cell" ondrop="dropTemp(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
       <li class="logo"><p>Freecell</p></li>
-      <li class="cell home-cell S-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell home-cell H-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell home-cell D-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell home-cell C-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell" id="S-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell" id="H-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell" id="D-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell home-cell" id="C-home" data-top="0" ondrop="dropHome(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
     </ul>
   </div>
   <main>
     <ul class="working-area">
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
-      <li class="cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
+      <li class="cell working-cell" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"></li>
     </ul>
   </main>
   <nav>
@@ -42,9 +42,9 @@
     <div class="right-panel">
       <ul>
         <li><a class="btn round-btn new-game-btn">new game</a></li>
-        <li><a class="btn round-btn restart-btn">restart</a></li>
+        <li><a class="btn round-btn restart-btn disable">restart</a></li>
         <li><a class="btn round-btn hint-btn disable">hint</a></li>
-        <li><a class="btn round-btn disable">undo</a></li>
+        <li><a class="btn round-btn undo-btn disable">undo</a></li>
       </ul>
   </div>
   </nav>

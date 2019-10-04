@@ -248,19 +248,19 @@ li.cell.drop-target-focus, .card.drop-target-focus {
 	background-position: center center;
 }
 
-.top-container ul li.S-home {
+.top-container ul li#S-home {
 	background-image: url("../img/S.png");
 }
 
-.top-container ul li.H-home {
+.top-container ul li#H-home {
 	background-image: url("../img/H.png");
 }
 
-.top-container ul li.D-home {
+.top-container ul li#D-home {
 	background-image: url("../img/D.png");
 }
 
-.top-container ul li.C-home {
+.top-container ul li#C-home {
 	background-image: url("../img/C.png");
 }
 
@@ -282,6 +282,19 @@ li.cell.drop-target-focus, .card.drop-target-focus {
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor: pointer;
+}
+
+.hint {
+	border: 1px solid #FFB53E;
+}
+
+.hint .card {
+	border-bottom: 1px solid #FFB53E;
+	border-right: 1px solid #FFB53E;
+}
+
+.hint .hint-end {
+	border-left: 1px solid #FFB53E;
 }
 
 main {
