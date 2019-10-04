@@ -5,6 +5,17 @@ UI design by Daphne: https://challenge.thef2e.com/user/2104?schedule=2826#works-
 
 Link: https://quebec87.github.io/freecell/
 
+# RULE:
+
+The Good Points
+	Transferring a card to a HomeCell		+250 Points	
+The Bad Points
+	Every second of elapsed time		-25Point 	
+	Every time Undo is used		-100 Points	(Undo only remeber last five steps)
+Completion Bonus
+A bonus starts at 15,000 and counts down by -25 points every second. You are awarded the bonus if you complete the game.
+
+
 # Finished:
 
 Game logic
@@ -23,6 +34,7 @@ hint
 
 undo
 
-# TODO:
-
 score
+
+
+

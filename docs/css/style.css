@@ -481,7 +481,7 @@ nav .right-panel ul {
 }
 
 .mask .info-window .pan ul {
-	margin-top: 10vh;
+	margin-top: 5vh;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;

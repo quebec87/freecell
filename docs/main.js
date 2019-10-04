@@ -15,7 +15,12 @@ let gameState = ""; //playing, win
 let timerInt; //timerInterval
 let hintArr = []; //hintArr store hint cards
 let historyArr = []; //store history object; {id, datapos, newpos}
-let historyMax = 5; //history max steps
+const historyMax = 5; //history max steps
+let score = 15000;
+const scoreBase = 15000;
+const homeCellPoint = 250;
+const secMinus = -1;
+const undoMinus = -100;
 
 //////////buildata
 function buildCardNumArr() {
@@ -154,6 +159,7 @@ function dropHome(ev) {
     dataEl.setAttribute('data-pos', ['h' + suit + (num - 1)]);
     dataEl.setAttribute('draggable', false);
     dropcell.appendChild(dataEl);
+    score += homeCellPoint;
     clearHint();
     updateDraggable();
 }
@@ -267,6 +273,7 @@ function goHome(_home, _card, _row) {
     _card.setAttribute('data-pos', ['h' + suit + _row]);
     _card.setAttribute('draggable', false);
     _card.classList.remove('autohome');
+    score += homeCellPoint;
     clearHint();
     updateDraggable();
 }
@@ -494,6 +501,8 @@ function undo() {
     clearHint();
     //update draggable
     updateDraggable();
+    //update score
+    score += undoMinus;
 
 }
 
@@ -602,6 +611,7 @@ function startTimer() {
     timerInt = window.setInterval(() => {
         if (gameState == "playing") {
             timer++;
+            score += secMinus;
             hours = parseInt(timer / 3600, 10);
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
@@ -610,6 +620,7 @@ function startTimer() {
             minutes = minutes < 10 ? `0${minutes}` : minutes;
             seconds = seconds < 10 ? `0${seconds}` : seconds;
             $('.time>span').text(`${hours}:${minutes}:${seconds}`);
+            $('.score>span').text(score);
         }
     }, 1000);
 }
@@ -619,6 +630,7 @@ function cleanTimer() {
         window.clearInterval(timerInt);
         timerInt = undefined;
         $('.time>span').text('00:00');
+        $('.score>span').text(score);
     }
 }
 
@@ -631,6 +643,7 @@ function cleanup() {
     $('.working-area>li').empty();
     hintArr = [];
     historyArr = [];
+    score = scoreBase;
     cleanTimer();
     gameState = "";
 }
