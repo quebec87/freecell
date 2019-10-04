@@ -11,7 +11,7 @@ Game logic
 
 new game, restart, win
 
-auto move ace and 2 to home when it at the bottom
+//auto move ace and 2 to home when it at the bottom
 
 auto complete when win
 
